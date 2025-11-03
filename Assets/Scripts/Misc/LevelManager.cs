@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -8,8 +9,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager main;
 
     public Transform[] Path;
-    public int lives = 10;
-
+    [SerializeField]private int lives = 10;
+    [SerializeField] private GameObject Healthbar;
     
     [SerializeField] private GameObject gameOverUI; // Assign your GameOverUI Panel here
 
@@ -22,6 +23,8 @@ public class LevelManager : MonoBehaviour
     {
         lives--;
         Debug.Log("Enemy reached the end! Lives left: " + lives);
+        Healthbar.transform.DOScaleX((float)lives / 10f, 0.2f);
+        CamShake.Instance?.Shake(0.25f, 0.6f);
 
         if (lives <= 0)
         {
@@ -48,14 +51,14 @@ public class LevelManager : MonoBehaviour
     }
 
     // Called from the Restart Button in your UI
-    public void RestartLevel()
+    private void RestartLevel()
     {
         Time.timeScale = 1f; // resume time
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Called from Main Menu Button
-    public void LoadMainMenu()
+    private void LoadMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");

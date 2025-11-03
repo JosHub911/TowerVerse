@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TurretBuildManager : MonoBehaviour
 {
-    public static TurretBuildManager Instance { get; private set; }
+    public static TurretBuildManager Instance { get; set; }
 
     private void Awake()
     {

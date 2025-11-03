@@ -6,6 +6,7 @@ namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
+
         public float speed;
 
         private Animator animator;
@@ -21,6 +22,7 @@ namespace Cainos.PixelArtTopDown_Basic
             Vector2 dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
             {
+                
                 dir.x = -1;
                 animator.SetInteger("Direction", 3);
             }
@@ -41,10 +43,12 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetInteger("Direction", 0);
             }
 
+            
             dir.Normalize();
             animator.SetBool("IsMoving", dir.magnitude > 0);
 
             GetComponent<Rigidbody2D>().linearVelocity = speed * dir;
+
         }
     }
 }

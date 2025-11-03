@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2700816443178422313}
   - component: {fileID: 8681668368417219250}
-  - component: {fileID: 5266542973773638589}
-  - component: {fileID: 5303179839677629188}
   - component: {fileID: 6920019113417306241}
+  - component: {fileID: 4071670756026940842}
+  - component: {fileID: 5303179839677629188}
   - component: {fileID: 4269263478966926147}
   - component: {fileID: 3182929732580218932}
   m_Layer: 21
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.024393477, y: -0.97212833, z: 0.2208349, w: 0.074856415}
   m_LocalPosition: {x: -0.18, y: 0.23, z: -75.03}
-  m_LocalScale: {x: 0.3944318, y: 0.3944318, z: 0.3944318}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5389782616667105609}
@@ -82,9 +82,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -44025399
-  m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5266542973773638589
+--- !u!114 &6920019113417306241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,12 +105,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 5840692805696161967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f323e5a92b482e46a1f08dde4727a8e, type: 3}
+  m_Script: {fileID: 11500000, guid: db06a15ccfa21de4cad29438cfa7bbbe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemymovement
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  CashReward: 1
+  health: 40
+  spriteRenderers: []
+  hitColor: {r: 0, g: 0.69125175, b: 1, a: 1}
+--- !u!114 &4071670756026940842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840692805696161967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dc0343e74af454caf1b35cc89ea1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StraightEnemy
   rb: {fileID: 4269263478966926147}
-  moveSpeed: 2
-  health: 72
+  moveSpeed: 3.33
 --- !u!95 &5303179839677629188
 Animator:
   serializedVersion: 7
@@ -133,19 +148,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6920019113417306241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5840692805696161967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db06a15ccfa21de4cad29438cfa7bbbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 15
 --- !u!50 &4269263478966926147
 Rigidbody2D:
   serializedVersion: 5

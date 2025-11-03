@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.Events;
 
 [System.Serializable]
 public class EnemyType
 {
     public GameObject prefab;
-    public float minSpeed = 2f;
-    public float maxSpeed = 3f;
+    private float minSpeed = 2f;
+    private float maxSpeed = 3f;
 }
 
 public class EnemySpawner : MonoBehaviour
@@ -20,6 +21,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float scalingFactor = 0.8f;
+    [SerializeField] private int maxWaves = 5;
+
+    [Header("WinScreen")]
+    [SerializeField] private GameObject WinScreen;
 
     public static UnityEvent onEnemyDestroyed = new UnityEvent();
 
@@ -60,8 +65,18 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(timeBetweenWaves);
             currentWave++;
+
+            if (currentWave > maxWaves)
+            {
+                Debug.Log("All waves completed!");
+                WinScreen.SetActive(true);
+                WinScreen.transform.DOScale(1f, 0.5f).From(0f).SetEase(Ease.OutBack);
+                yield break;
+            }
         }
+      
     }
+
 
     private void SpawnEnemy()
     {
@@ -76,21 +91,16 @@ public class EnemySpawner : MonoBehaviour
         // Spawn enemy prefab
         GameObject enemyGO = Instantiate(type.prefab, (Vector2)transform.position + offset, Quaternion.identity);
 
-        // Try to assign a random speed (if the script supports it)
-        IEnemyMovement movement = enemyGO.GetComponent<IEnemyMovement>();
-        if (movement != null)
-        {
-            float randSpeed = Random.Range(type.minSpeed, type.maxSpeed);
-            movement.SetSpeed(randSpeed);
-        }
+      
+        
     }
 
-    private void EnemyDestroyed()
+    public void EnemyDestroyed()
     {
         enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
     }
 
-    public void NotifyEnemyKilled()
+    private void NotifyEnemyKilled()
     {
         EnemyDestroyed();
     }
@@ -99,4 +109,12 @@ public class EnemySpawner : MonoBehaviour
     {
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, scalingFactor));
     }
+
+
+    public bool IsAllWavesDone()
+    {
+        return currentWave > maxWaves;
+    }
+
+
 }

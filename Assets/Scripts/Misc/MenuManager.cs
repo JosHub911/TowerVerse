@@ -21,19 +21,19 @@ public class MenuManager : MonoBehaviour
         ShowMainMenuInstant();
     }
 
-    public void OnStartButton()
+    private  void OnStartButton()
     {
         if (!isTransitioning)
             StartCoroutine(SwitchPanel(mainMenuPanel, levelSelectPanel));
     }
 
-    public void OnBackButton()
+    private  void OnBackButton()
     {
         if (!isTransitioning)
             StartCoroutine(SwitchPanel(levelSelectPanel, mainMenuPanel));
     }
 
-    public void OnLevelSelect(string levelName)
+    private  void OnLevelSelect(string levelName)
     {
         SceneManager.LoadScene(levelName);
     }

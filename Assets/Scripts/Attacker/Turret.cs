@@ -15,12 +15,13 @@ public class Turret : MonoBehaviour
     private Transform target; // The current enemy we’re aiming at
     private float fireCountdown = 0f; // Timer to control fire rate
 
-    void Update()
+    private void Update()
     {
         // Step 1: Find a target if we don’t have one or it’s out of range
         if (target == null || target.Equals(null) || Vector3.Distance(transform.position, target.position) > range)
         {
             EnemyLockOn();
+            // Debugging left in place (can remove later)
             Debug.Log("Locking on to target: " + (target != null ? target.name : "None"));
         }
 
@@ -37,7 +38,7 @@ public class Turret : MonoBehaviour
         if (fireCountdown <= 0f)
         {
             Shoot();
-            fireCountdown = 1f / fireRate;
+            fireCountdown = 1f / Mathf.Max(0.0001f, fireRate);
         }
 
         fireCountdown -= Time.deltaTime;
@@ -47,8 +48,6 @@ public class Turret : MonoBehaviour
     private void EnemyLockOn()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Debug.Log("Searching for enemies, found: " + enemies.Length);
-
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
@@ -57,7 +56,6 @@ public class Turret : MonoBehaviour
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < shortestDistance && distanceToEnemy <= range)
             {
-                Debug.Log("Enemy in range: " + enemy.name);
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
@@ -76,11 +74,14 @@ public class Turret : MonoBehaviour
     // Spawns a bullet and makes it fly forward
     private void Shoot()
     {
+        if (bulletPrefab == null || firePoint == null) return;
+
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bulletGO.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = firePoint.right * bulletSpeed; //  correct property for Rigidbody2D
+            // Correct Rigidbody2D property is 'velocity'
+            rb.linearVelocity = firePoint.right * bulletSpeed;
         }
     }
 

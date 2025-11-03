@@ -53,5 +53,6 @@ public class Enemymovement : MonoBehaviour
             EnemySpawner.onEnemyDestroyed.Invoke();
             Destroy(gameObject);
         }
+
     }
 }

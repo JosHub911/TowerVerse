@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 5
-  lifeTime: 1
+  lifeTime: 0.5
 --- !u!212 &366499956069076113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93,9 +93,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -44025399
-  m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8542607308030733107, guid: b1581a5dd68a7254fbd6ff24a7ee8ba6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -1,4 +1,5 @@
-public interface IEnemyMovement
+/*public interface IEnemyMovement
 {
     void SetSpeed(float newSpeed);
 }
+*/

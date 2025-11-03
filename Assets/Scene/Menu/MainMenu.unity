@@ -343,6 +343,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 1615497041577853704, guid: 45817855df3a3e64a896e1a02c05db9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -472.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615497041577853704, guid: 45817855df3a3e64a896e1a02c05db9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -305.34
+      objectReference: {fileID: 0}
     - target: {fileID: 2431389569908565072, guid: 45817855df3a3e64a896e1a02c05db9d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

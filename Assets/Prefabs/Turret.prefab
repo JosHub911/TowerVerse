@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6539bab775ca74f8978ad250fcc23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
-  range: 14
+  range: 7
   fireRate: 3
   bulletPrefab: {fileID: 5244920006292704355, guid: 2365129c953caaa4b84911820f9c2b3d,
     type: 3}
   firePoint: {fileID: 552537736463829813}
-  bulletSpeed: 16
+  bulletSpeed: 20
   turnSpeed: 5
 --- !u!212 &2658827505911717709
 SpriteRenderer:

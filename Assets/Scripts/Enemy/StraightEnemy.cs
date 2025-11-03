@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StraightEnemy : MonoBehaviour, IEnemyMovement
+public class StraightEnemy : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed = 2f;
@@ -34,7 +34,7 @@ public class StraightEnemy : MonoBehaviour, IEnemyMovement
         rb.linearVelocity = dir * moveSpeed;
     }
 
-    public void SetSpeed(float newSpeed)
+    private void SetSpeed(float newSpeed)
     {
         moveSpeed = newSpeed;
     }

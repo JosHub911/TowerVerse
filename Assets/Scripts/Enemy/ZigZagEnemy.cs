@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class ZigZagEnemy : MonoBehaviour, IEnemyMovement
+public class ZigZagEnemy : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed = 2f;
+
     [SerializeField] private float zigzagAmplitude = 0.5f;
     [SerializeField] private float zigzagFrequency = 5f;
 
@@ -44,8 +45,9 @@ public class ZigZagEnemy : MonoBehaviour, IEnemyMovement
         rb.linearVelocity = (dir * moveSpeed) + zigzag;
     }
 
-    public void SetSpeed(float newSpeed)
+    private void SetSpeed(float newSpeed)
     {
+
         moveSpeed = newSpeed;
     }
 }
