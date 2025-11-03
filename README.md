@@ -26,6 +26,11 @@
 
 ---
 
+<img width="887" height="512" alt="OnePage" src="https://github.com/user-attachments/assets/efa3630a-712d-4114-9598-ae714ae79bdf" />
+
+---
+
+
 ## 4. Torens
 
 | Toren       | Effect                                                                 | Bereik | CD       |
