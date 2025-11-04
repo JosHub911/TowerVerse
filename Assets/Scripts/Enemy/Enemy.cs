@@ -38,9 +38,14 @@ public class Enemy : MonoBehaviour
             if (CashSystem.Instance != null)
                 CashSystem.Instance.AddCash(CashReward);
 
+            PopupSpawner.Instance?.SpawnPopup("+" + CashReward + "CASH NYA");
+            ScreenFlash.Instance?.Flash();
+            
+
             EnemySpawner.onEnemyDestroyed.Invoke();
             KillEnemy();
         }
+
     }
 
     private void KillEnemy()
@@ -51,6 +56,7 @@ public class Enemy : MonoBehaviour
         // Fade + shrink
         foreach (var sr in spriteRenderers)
             sr.DOFade(0f, 0.4f);
+        CamShake.Instance?.Shake(0.2f, 0.4f);
 
         transform.DOScale(0f, 0.4f).SetEase(Ease.InBack)
         .OnComplete(() =>
