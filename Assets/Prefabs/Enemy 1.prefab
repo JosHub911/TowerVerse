@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StraightEnemy
   rb: {fileID: 4269263478966926147}
   moveSpeed: 3.33
+  maxOffset: {x: 5, y: 5}
 --- !u!95 &5303179839677629188
 Animator:
   serializedVersion: 7

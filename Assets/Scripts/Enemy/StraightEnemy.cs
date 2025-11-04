@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class StraightEnemy : MonoBehaviour
 {
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed = 2f;
     private Transform target;
@@ -30,6 +31,7 @@ public class StraightEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         Vector2 dir = (target.position - transform.position).normalized;
         rb.linearVelocity = dir * moveSpeed;
     }
