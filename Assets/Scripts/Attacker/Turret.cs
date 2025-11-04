@@ -77,6 +77,8 @@ public class Turret : MonoBehaviour
         if (bulletPrefab == null || firePoint == null) return;
 
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        SoundManager.Instance?.PlayShoot();
+
         Rigidbody2D rb = bulletGO.GetComponent<Rigidbody2D>();
         if (rb != null)
         {

@@ -249,6 +249,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5244920006292704355, guid: f9ee67e6c26c12744b9a90d060e76716,
     type: 3}
   bulletSpeed: 12
+  bulletCooldown: 0.5
   useAxis: 1
 --- !u!212 &380439759932293570
 SpriteRenderer:
@@ -298,7 +299,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ec47f75fe8aff1644ac73998f4ad31b5, type: 3}
-  m_Color: {r: 0.4481132, g: 0.90214354, b: 1, a: 1}
+  m_Color: {r: 0.23616053, g: 0.7171031, b: 0.8207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1

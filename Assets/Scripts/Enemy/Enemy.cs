@@ -10,23 +10,20 @@ public class Enemy : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer[] spriteRenderers;
     [SerializeField] private Color hitColor = Color.red;
+    [SerializeField] private Transform visuals; // drag the child here
 
     private Color originalColor;
     private Vector3 originalScale;
 
     private void Awake()
     {
-        // grab sprite renderers on this object + children
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-
         originalColor = spriteRenderers[0].color;
         originalScale = transform.localScale;
     }
 
-
     private void Start()
     {
-        // Pop-in at the correct size, not Vector3.one
         transform.localScale = Vector3.zero;
         transform.DOScale(originalScale, 0.35f).SetEase(Ease.OutBack);
     }
@@ -39,19 +36,33 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             if (CashSystem.Instance != null)
-            {
                 CashSystem.Instance.AddCash(CashReward);
-            }
+
             EnemySpawner.onEnemyDestroyed.Invoke();
-            Destroy(gameObject);
+            KillEnemy();
         }
+    }
+
+    private void KillEnemy()
+    {
+        // Stop movement / behavior scripts if needed (optional)
+        GetComponent<Collider2D>().enabled = false;
+
+        // Fade + shrink
+        foreach (var sr in spriteRenderers)
+            sr.DOFade(0f, 0.4f);
+
+        transform.DOScale(0f, 0.4f).SetEase(Ease.InBack)
+        .OnComplete(() =>
+        {
+            Destroy(gameObject);
+        });
     }
 
     private void FlashEffect()
     {
         if (spriteRenderers == null || spriteRenderers.Length == 0) return;
 
-        // stop tweens so they don't stack
         foreach (var sr in spriteRenderers)
             sr.DOKill();
         transform.DOKill();
@@ -62,8 +73,6 @@ public class Enemy : MonoBehaviour
               .OnComplete(() => sr.DOColor(originalColor, 0.15f));
         }
 
-        transform.DOPunchScale(originalScale * 0.15f, 0.25f, 8, 0.5f);
+        visuals.DOShakePosition(1f, 0.1f);
     }
-
-
 }

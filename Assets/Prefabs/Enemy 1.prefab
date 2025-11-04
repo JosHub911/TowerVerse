@@ -112,6 +112,7 @@ MonoBehaviour:
   health: 40
   spriteRenderers: []
   hitColor: {r: 0, g: 0.69125175, b: 1, a: 1}
+  visuals: {fileID: 5389782616667105609}
 --- !u!114 &4071670756026940842
 MonoBehaviour:
   m_ObjectHideFlags: 0

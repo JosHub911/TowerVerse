@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -65,6 +66,11 @@ public class PlayerShoot : MonoBehaviour
 
         GameObject b = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
+        SoundManager.Instance?.PlayShoot();
+
+        CamShake.Instance?.Shake(0.1f, 0.2f);
+        
+
         if (rb != null)
         {
             // correct property is velocity on Rigidbody2D

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea05f0f7ffcf0f4b82a806171f72518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  damage: 3
+  damage: 5
   lifeTime: 1
 --- !u!212 &366499956069076113
 SpriteRenderer:
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0.111739054, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 0, g: 0.7743149, b: 1, a: 0.34901962}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

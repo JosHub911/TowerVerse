@@ -77,6 +77,7 @@ public class TurretDragUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                     // Only place turret if we successfully spent the cash
                     if (TurretBuildManager.Instance != null && turretPrefab != null)
                     {
+                        SoundManager.Instance?.PlayPlaceTower();
                         TurretBuildManager.Instance.PlaceTurret(turretPrefab, hit.point);
                     }
                 }

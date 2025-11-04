@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
     {
         lives--;
         Debug.Log("Enemy reached the end! Lives left: " + lives);
+        SoundManager.Instance?.PlayPlayerDamage();
+
         Healthbar.transform.DOScaleX((float)lives / 10f, 0.2f);
         CamShake.Instance?.Shake(0.25f, 0.6f);
 
