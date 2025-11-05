@@ -197,6 +197,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4796264129638149515, guid: 406ca5c1740da264dae86b25f480ade2,
+        type: 3}
+      propertyPath: nextSceneName
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7487569672020970280, guid: 406ca5c1740da264dae86b25f480ade2,
         type: 3}
       propertyPath: maxWaves
@@ -478,6 +483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5217253175111926839, guid: 1b40b1e302604184cb49d0401b56effa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -98
+      objectReference: {fileID: 0}
     - target: {fileID: 9051512315889548493, guid: 1b40b1e302604184cb49d0401b56effa,
         type: 3}
       propertyPath: m_Pivot.x
@@ -579,7 +589,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4701875409826071664, guid: 1b40b1e302604184cb49d0401b56effa, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8330408435785261607, guid: 1b40b1e302604184cb49d0401b56effa,
         type: 3}

@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
         if (gameOverUI != null)
         {
             gameOverUI.SetActive(true);
+            RestartLevel();
         }
         else
         {

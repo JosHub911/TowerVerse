@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             if (CashSystem.Instance != null)
                 CashSystem.Instance.AddCash(CashReward);
 
-            PopupSpawner.Instance?.SpawnPopup("+" + CashReward + "CASH NYA");
+            PopupSpawner.Instance?.SpawnPopup("+" + CashReward + "CASH NYA!!");
             ScreenFlash.Instance?.Flash();
             
 

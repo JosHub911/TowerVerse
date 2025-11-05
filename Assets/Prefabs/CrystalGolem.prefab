@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db06a15ccfa21de4cad29438cfa7bbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  CashReward: 1
-  health: 60
+  CashReward: 3
+  health: 90
   spriteRenderers: []
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   visuals: {fileID: 8119174650110296452}
